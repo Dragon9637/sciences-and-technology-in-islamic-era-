@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>العلوم و المعارف عبر عصور الحضارة الإسلامية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap" rel="stylesheet"> <!-- رابط خط Amiri -->
+    <style>
+        @font-face {
+            font-family: 'floral_dawn';
+            src: url(floral_dawn.ttf);
+        }
+
+        /* إعدادات أساسية */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            text-align: right; /* محاذاة النصوص لليمين */
+            overflow-x: hidden; /* منع التمرير الأفقي */
+            background-image: url(pics/pic3.jfif); /* تعيين الصورة كخلفية جديدة */
+            background-size: cover; /* ملء الخلفية بالكامل */
+            background-position: center; /* محاذاة الصورة في وسط الخلفية */
+            background-repeat: no-repeat; /* منع تكرار الصورة */
+            background-attachment: fixed; /* تحريك الخلفية مع المحتوى */
+        }
+
+        /* تنسيق الرأس */
+        header {
+            background: rgba(255, 255, 255, 0.8); /* خلفية شفافة */
+            padding: 20px;
+            border-bottom: 4px solid #6e3f28; /* لون أندلسي دافئ */
+            text-align: center; /* محاذاة النصوص في الرأس للوسط */
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف للرأس */
+        }
+
+        header h1 {
+            margin: 0;
+            color: #6e3f28;
+            font-size: 3em; /* زيادة حجم الخط */
+            font-family: 'Amiri', serif; /* استخدام خط Amiri */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* إضافة ظل للنص */
+        }
+
+        /* زر القائمة */
+        .menu-button {
+            position: absolute;
+            top: 40px;
+            right: 20px;
+            background-color: #6e3f28;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 1em;
+            border-radius: 5px;
+        }
+
+        .menu-button:hover {
+            background-color: #5c3421;
+        }
+
+        /* القائمة المنسدلة */
+        .menu {
+            position: fixed;
+            top: 0;
+            right: -500px;
+            width: 300px;
+            height: 100%;
+            background-color: #fff;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            transition: right 0.3s ease;
+            z-index: 2;
+        }
+
+        .menu.active {
+            right: 0;
+        }
+
+        .menu h2 {
+            margin-top: 0;
+            color: #6e3f28;
+            font-size: 1.5em; /* زيادة حجم العنوان */
+            font-family: 'Arial', sans-serif; /* تغيير نوع الخط */
+            text-align: center; /* محاذاة العنوان للوسط */
+            text-transform: uppercase; /* تحويل العنوان إلى حروف كبيرة */
+        }
+
+        .menu label {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .menu input[type="text"], .menu input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px; /* تعديل التباعد العمودي */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1.1em; /* زيادة حجم الخط */
+            text-align: right; /* محاذاة النصوص لليمين */
+        }
+
+        .menu button {
+            margin-top: 10px;
+            width: 100%;
+            padding: 12px; /* زيادة حجم الحشو */
+            background-color: #6e3f28;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1em; /* زيادة حجم الخط */
+            border-radius: 5px;
+        }
+
+        .menu button:hover {
+            background-color: #5c3421;
+        }
+
+        
+        /* تصميم المربعات */
+        .options {
+            display: flex;
+            flex-direction: column; /* ترتيب الصناديق فوق بعضها البعض */
+            justify-content: center; /* توسيط الصناديق بشكل أفضل */
+            gap: 15px;
+            margin-top: 20px;
+            padding: 0 20px; /* تباعد بسيط من الحواف */
+            position: absolute; /* تحديد النسبة للصناديق الأب */
+            right: 30%; /* تحريك الصناديق إلى النصف الأيمن */
+            transform: translateX(50%); /* تصحيح الموقع بالنسبة للحركة إلى النصف الأيمن */
+            background: rgba(255, 255, 255, 0.8); /* خلفية شفافة */
+            padding: 20px;
+            border-radius: 10px;
+            text-align: right; /* محاذاة النصوص لليمين */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف */
+            z-index: 1;
+        }
+
+        .option {
+    background: rgba(255, 255, 255, 0.9); /* خلفية شفافة للصناديق */
+    color: #6e3f28;
+    padding: 15px; /* تقليل الحشو */
+    border-radius: 10px;
+    text-align: right; /* محاذاة النصوص لليمين داخل الصندوق */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* إضافة ظل خفيف للمربعات */
+    transition: background 0.3s ease, transform 0.3s ease; /* تأثير التحجيم */
+    cursor: pointer; /* تغيير شكل المؤشر عند المرور فوق المربع */
+    text-decoration: none; /* إزالة الخط السفلي من الروابط */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    width: 100%; /* جعل عرض الصندوق 100% للتأكد من التوسط */
+    max-width: 350px; /* تقليل العرض */
+    transform: scale(0.98); /* تصغير الصندوق بنسبة 95% */
+}
+
+.option:hover {
+    background: #f0e5d8; /* لون أفتح عند المرور فوق المربع */
+    transform: scale(1); /* تكبير الصندوق إلى الحجم الطبيعي عند المرور فوقه */
+}
+
+
+
+        .option h2 {
+            margin: 0;
+            font-size: 1.6em; /* زيادة حجم العنوان */
+            font-family: 'Cairo', serif; /* خط عربي جذاب */
+        }
+
+        .option p {
+            margin: 10px 0;
+            font-size: 1.2em; /* زيادة حجم النص */
+        }
+
+        /* تنسيق التذييل */
+        footer {
+            background: rgba(255, 255, 255, 0.8); /* خلفية شفافة للتذييل */
+            padding: 10px;
+            text-align: center; /* محاذاة النصوص للوسط في التذييل */
+            border-top: 4px solid #6e3f28;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف للتذييل */
+            z-index: 1;
+        }
+
+        footer p {
+            margin: 0;
+            color: #6e3f28;
+        }
+
+        /* تنسيق الجانب الأيمن الجديد */
+        .right-side {
+            position: absolute; /* تثبيت العنصر */
+            left: 100px; /* تحديد الموقع الأفقي للجانب الأيمن وتحريكه 10 بيكسل */
+            top: 55%; /* توسيط الجانب الأيمن عمودياً */
+            transform: translateY(-50%);
+            width: 350px; /* زيادة عرض الجانب الأيمن */
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 15px; /* زيادة شكل الحواف */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        .right-side h2 {
+            font-size: 1.6em; /* زيادة حجم العنوان */
+            color: #6e3f28;
+            margin-bottom: 15px; /* تعديل التباعد العمودي */
+        }
+
+        .right-side p {
+            font-size: 1.2em; /* زيادة حجم النص */
+            color: #333;
+            line-height: 1.6; /* تعديل ارتفاع الخط */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>العلوم و المعارف عبر عصور الحضارة الإسلامية</h1>
+        <button class="menu-button" onclick="toggleMenu()">تسجيل دخول</button>
+    </header>
+    <main>
+        <div class="right-side">
+            <h2>مرحبا بك في العلوم و المعارف عبر عصور الحضارة الإسلامية</h2>
+            <p>استكشف معنا إسهامات العلماء العرب في التقدم العلمي والثقافي عبر التاريخ.</p>
+        </div>
+        <div class="options">
+            <a class="option" href="andalusian-scientists.html">
+                <h2>مجال العلوم</h2>
+                <p>استكشف إسهامات العلماء الذين أثروا في الحضارة و العالم</p>
+            </a>
+            <a class="option" href="arab-writers.html">
+                <h2>مجال الأدب</h2>
+                <p>تعرف على علماء اللغة  و الادباء في مجال الأدب ومدى فصاحتهم</p>
+            </a>
+            <a class="option" href="explorers.html">
+                <h2>مجال الرحالة و الجغرافيا</h2>
+                <p>اقرأ عن الرحالة الذين استكشفوا العالم ونقلوا المعرفة والثقافة.</p>
+            </a>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 العلوم و المعارف عبر عصور الحضارة الإسلامية. جميع الحقوق محفوظة.</p>
+    </footer>
+    <div class="menu" id="menu">
+        <h2>تسجيل دخول</h2>
+        <label for="username">اسم المستخدم</label>
+        <input type="text" id="username" name="username">
+        <label for="password">كلمة المرور</label>
+        <input type="password" id="password" name="password">
+        <button type="submit">دخول</button>
+        <button class="cancel-button" onclick="toggleMenu()">إلغاء</button>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById('menu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
